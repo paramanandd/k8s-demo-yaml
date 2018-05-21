@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: process
+  labels:
+    app: process
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: process
+  template:
+    metadata:
+      labels:
+        app: process
+    spec:
+      containers:
+      - name: pull
+        image: parma/k8s-demo:{TAG}
+        ports:
+        - containerPort: 80
+
