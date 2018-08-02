@@ -3,18 +3,17 @@ pipeline {
     stages {
         stage('Build') { 
             steps { 
-                sh 'make' 
+               cat deployment.yaml
             }
         }
         stage('Test'){
             steps {
-                sh 'make check'
-                junit 'reports/**/*.xml' 
+                ls 
             }
         }
         stage('Deploy') {
             steps {
-                sh 'make publish'
+                cat service.yaml
             }
         }
     }
