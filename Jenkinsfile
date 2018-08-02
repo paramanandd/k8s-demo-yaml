@@ -9,6 +9,6 @@ node {
       echo "in stage build"
    }
    stage('Results') {
-      echo "in stage build"
+      sh 'cat deployment.yaml'
    }
 }
