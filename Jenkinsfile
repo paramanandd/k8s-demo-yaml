@@ -1,20 +1,13 @@
-pipeline { 
-    agent any 
-    stages {
-        stage('Build') { 
-            steps { 
-               cat deployment.yaml
-            }
-        }
-        stage('Test'){
-            steps {
-                ls 
-            }
-        }
-        stage('Deploy') {
-            steps {
-                cat service.yaml
-            }
-        }
-    }
+node {
+   def mvnHome
+   stage('Preparation') { // for display purposes
+      cat deployment.yaml
+   }
+   stage('Build') {
+      // Run the maven build
+      echo "in stage build"
+   }
+   stage('Results') {
+      cat service.yaml
+   }
 }
