@@ -1,13 +1,13 @@
 node {
    def mvnHome
    stage('Preparation') { // for display purposes
-      cat deployment.yaml
+     echo "in stage build"
    }
    stage('Build') {
       // Run the maven build
       echo "in stage build"
    }
    stage('Results') {
-      cat service.yaml
+      echo "in stage build"
    }
 }
