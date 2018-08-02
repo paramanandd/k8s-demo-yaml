@@ -5,6 +5,7 @@ node {
    }
    stage('Build') {
       // Run the maven build
+      fileExists 'deployment.yaml'
       echo "in stage build"
    }
    stage('Results') {
